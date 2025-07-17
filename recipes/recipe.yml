@@ -23,7 +23,7 @@ modules:
         - errornointernet/quickshell
         - deltacopy/darkly
         - luisbocanegra/kde-material-you-colors
-        - yalter/niri
+        - yalter/niri-git
       files:
         - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
     install:
@@ -42,7 +42,7 @@ modules:
         - mako
         - quickshell
         # Niri & dependencies
-        - niri-git
+        - niri
         - xdg-desktop-portal-gtk
         - xdg-desktop-portal-gnome
         - gnome-keyring
