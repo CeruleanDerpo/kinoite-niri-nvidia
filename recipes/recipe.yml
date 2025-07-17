@@ -17,35 +17,40 @@ modules:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
-  - type: rpm-ostree
+  - type: dnf
     repos:
-      - https://copr.fedorainfracloud.org/coprs/errornointernet/quickshell/repo/fedora-%OS_VERSION%/errornointernet-quickshell-fedora-%OS_VERSION%.repo
-      - https://copr.fedorainfracloud.org/coprs/deltacopy/darkly/repo/fedora-%OS_VERSION%/deltacopy-darkly-fedora-%OS_VERSION%.repo
-      - https://copr.fedorainfracloud.org/coprs/luisbocanegra/kde-material-you-colors/repo/fedora-%OS_VERSION%/luisbocanegra-kde-material-you-colors-fedora-%OS_VERSION%.repo
-      - https://copr.fedorainfracloud.org/coprs/yalter/niri/repo/fedora-%OS_VERSION%/yalter-niri-fedora-%OS_VERSION%.repo
-      - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
+      copr:
+        - errornointernet/quickshell
+        - deltacopy/darkly
+        - luisbocanegra/kde-material-you-colors
+        - yalter/niri
+      files:
+        - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
     install:
-      # Repo dependencies
-      - terra-release
-      # Command-line tools
-      - android-tools
-      - cronie
-      - fastfetch
-      # KDE ricing
-      - darkly
-      - kde-material-you-colors
-      # Niri ricing
-      - mako
-      - quickshell
-      # Niri & dependencies
-      - niri-git
-      - xdg-desktop-portal-gtk
-      - xdg-desktop-portal-gnome
-      - gnome-keyring
-      - xwayland-satellite
-      - swww
-      - swaylock
-    remove: []
+      skip-unavailable: true
+      packages:
+        # Repo dependencies
+        - terra-release
+        # Command-line tools
+        - android-tools
+        - cronie
+        - fastfetch
+        # KDE ricing
+        - darkly
+        - kde-material-you-colors
+        # Niri ricing
+        - mako
+        - quickshell
+        # Niri & dependencies
+        - niri-git
+        - xdg-desktop-portal-gtk
+        - xdg-desktop-portal-gnome
+        - gnome-keyring
+        - xwayland-satellite
+        - swww
+        - swaylock
+    remove:
+      packages: []
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
       # - firefox
