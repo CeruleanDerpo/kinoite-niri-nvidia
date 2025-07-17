@@ -49,6 +49,7 @@ modules:
         - xwayland-satellite
         - swww
         - swaylock
+        - swayidle
     remove:
       packages: []
       # example: removing firefox (in favor of the flatpak)
