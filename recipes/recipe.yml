@@ -50,6 +50,7 @@ modules:
         - swww
         - swaylock
         - swayidle
+        - fuzzel
     remove:
       packages: []
       # example: removing firefox (in favor of the flatpak)
