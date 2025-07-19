@@ -17,7 +17,7 @@ modules:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
       - source: xdg-desktop-portal
-        destination: /usr/share/xdg-desktop-portal/
+        destination: /etc/xdg-desktop-portal/
 
   - type: dnf
     repos:
