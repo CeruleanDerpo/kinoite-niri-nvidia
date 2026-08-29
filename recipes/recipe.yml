@@ -24,7 +24,7 @@ modules:
       copr:
         - errornointernet/quickshell
         - deltacopy/darkly
-        - luisbocanegra/kde-material-you-colors
+        # - luisbocanegra/kde-material-you-colors
         - yalter/niri-git
       files:
         - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
@@ -39,7 +39,7 @@ modules:
         - fastfetch
         # KDE ricing
         - darkly
-        - kde-material-you-colors
+        # - kde-material-you-colors
         # Niri ricing
         - mako
         - quickshell-git
